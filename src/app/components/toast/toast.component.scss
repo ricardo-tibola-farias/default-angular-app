@@ -1,0 +1,40 @@
+:host {
+
+  .content {
+    display: flex;
+  }
+
+  .icon {
+    margin-right: 8px;
+    color: var(--color-neutral-90) !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .message {
+    color: var(--color-neutral-90);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    max-width: 90px;
+    background-color: transparent;
+  }
+
+  .error {
+    color: var(--color-error-40);
+  }
+
+  .success {
+    color: var(--color-success);
+  }
+
+  .info {
+    color: var(--color-neutral-10);
+  }
+}

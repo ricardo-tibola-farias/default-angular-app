@@ -1,0 +1,31 @@
+<div class="header">
+    <ng-container [ngSwitch]="data.type">
+        <span [class]="'material-icons-outlined header__icon header__icon--' + data.type"
+              *ngSwitchCase="'confirmation'">help_outline</span>
+        <span [class]="'material-icons-outlined header__icon header__icon--' + data.type"
+              *ngSwitchCase="'alert'">info</span>
+        <span [class]="'material-icons-outlined header__icon header__icon--' + data.type"
+              *ngSwitchCase="'error'">report_problem</span>
+    </ng-container>
+    <span [class]="'header__title header__title--' + data.type">{{ data.title }}</span>
+</div>
+<p class="content"
+   [innerHTML]="data.message"></p>
+<div class="footer">
+    <ng-container *ngIf="data.type == 'confirmation'">
+        <button class="btn btn--outline btn--error"
+                (click)="dialogRef.close(false)">
+            {{ data.negativeAction }}
+        </button>
+        <button class="btn btn--primary"
+                (click)="dialogRef.close(true)">
+            {{ data.positiveAction }}
+        </button>
+    </ng-container>
+    <ng-container *ngIf="data.type != 'confirmation'">
+        <button class="btn  btn--primary"
+                (click)="dialogRef.close()">
+            {{ data.neutralAction }}
+        </button>
+    </ng-container>
+</div>

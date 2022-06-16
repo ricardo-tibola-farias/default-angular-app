@@ -1,0 +1,135 @@
+@import "../styles/functions";
+@import "../styles/breakpoints";
+@import "../styles/variables/typography";
+
+//montserrat
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+
+:root {
+  // font family variables
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Montserrat", sans-serif; // in case they change titles fonts, it may happen
+}
+
+// fluid typography
+//
+// READ ARTICLE for better understanding
+// https://css-tricks.com/snippets/css/fluid-typography/
+
+// used on fluid typograph mixins
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+html {
+  // that mixin makes the font size vary smoothly from ($max_font:18px) to ($min_font:15px) beteween viewport width ($max_width:1440px) to ($min_width:576px)
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  // check mixin, fuction and the article link at the bottom of the file
+  font-family: var(--font-primary);
+  font-weight: normal; // same as 400
+  color: var(--color-neutral-40);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold; // same as 700
+  font-family: var(--font-secondary);
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+p,
+span,
+i,
+li,
+a,
+small,
+big,
+input,
+select,
+option,
+label {
+  font-weight: inherit;
+  font-family: inherit;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+h1 {
+  font-size: rem(24px);
+}
+
+h2 {
+  font-size: rem(24px);
+}
+
+h3 {
+  font-size: rem(24px);
+}
+
+h4 {
+  font-size: rem(24px);
+}
+
+h5 {
+  font-size: rem(24px);
+}
+
+big {
+  font-size: rem(18px);
+}
+
+h6 {
+  font-size: rem(14px);
+}
+
+p,
+span,
+i,
+li,
+a,
+input,
+select,
+option,
+label {
+  font-size: rem(14px);
+  @include breakpoint-max(xs) {
+    letter-spacing: 0.02em;
+  }
+}
+
+small {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}

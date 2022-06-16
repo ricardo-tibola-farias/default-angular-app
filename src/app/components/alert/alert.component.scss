@@ -1,0 +1,49 @@
+@import "../../../styles/functions";
+
+.header {
+  display: flex;
+  align-items: center;
+  color: var(--color-neutral-10);
+
+  &__icon {
+    margin-right: 12px;
+  }
+
+  &__icon--confirmation {
+    color: var(--color-primary);
+  }
+  &__icon--error {
+    color: var(--color-error-40);
+  }
+  &__icon--alert {
+    color: var(--color-neutral-10);
+  }
+}
+
+.header__title {
+  font-size: rem(20px);
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0;
+
+  &--confirmation {
+    color: var(--color-primary);
+  }
+  &--error {
+    color: var(--color-error-40);
+  }
+  &--alert {
+    color: var(--color-neutral-10);
+  }
+}
+
+.content {
+  color: var(--color-neutral-10);
+  margin: 20px 0;
+}
+
+.footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}

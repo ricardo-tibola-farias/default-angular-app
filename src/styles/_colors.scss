@@ -1,0 +1,77 @@
+// ? based on figma layout styleguide  https://www.figma.com/file/PTHfYjSykvqHr6Ir2uX1jK/Ta-Formando?node-id=242%3A0
+// * for those who want to have a better understand over dark/light mode and iots relevance on user experience https://www.youtube.com/watch?v=HxJnvCOC2vQ
+
+:root {
+  //? ////////////////////////////////////////////
+  //? PRIMARY COLOR //////////////////////////////
+  //strip H S L into variables hsl(192, 80%, 35%);
+  --debugg: hsl(192, 80%, 35%);
+  --color-h: 195;
+  --color-s: 80%;
+  --color-l: 35%;
+
+  // * from now and on the color will auto adjust
+  --color-primary: hsl(var(--color-h), var(--color-s), var(--color-l));
+  --color-white: white;
+  --color-black: black;
+
+  --color-neutral-100: hsl(0, 0%, 100%);
+  --color-neutral-95: hsl(0, 0%, 98%);
+  --color-neutral-90: hsl(0, 0%, 96%);
+  --color-neutral-80: hsl(0, 0%, 90%);
+  --color-neutral-70: hsl(0, 0%, 80%);
+  --color-neutral-60: hsl(0, 0%, 68%);
+  --color-neutral-50: hsl(0, 0%, 50%);
+  --color-neutral-40: hsl(0, 0%, 38%);
+  --color-neutral-30: hsl(0, 0%, 21%);
+  --color-neutral-20: hsl(0, 0%, 13%);
+  --color-neutral-10: hsl(0, 0%, 9%);
+
+  --color-success-100: hsl(146, 25%, 97%);
+  --color-success-90: hsl(146, 25%, 93%);
+  --color-success-80: hsl(146, 45%, 85%);
+  --color-success-70: hsl(146, 45%, 75%);
+  --color-success-40: hsl(146, 80%, 35%);
+
+  --color-backdrop: rgba(0, 0, 0, 0.4);
+
+  --color-error-90: hsl(348, 25%, 93%);
+  --color-error-80: hsl(348, 45%, 85%);
+  --color-error-70: hsl(348, 45%, 75%);
+  --color-error-50: hsl(348, 55%, 65%);
+  --color-error-40: hsl(348, 80%, 35%);
+
+  --color-plus-6: hsl(var(--color-h), 25%, 97%);
+  --color-plus-5: hsl(var(--color-h), 25%, 93%);
+  --color-plus-4: hsl(var(--color-h), 45%, 85%);
+  --color-plus-3: hsl(var(--color-h), 45%, 75%);
+  --color-plus-2: hsl(var(--color-h), 50%, 65%);
+  --color-plus-1: hsl(var(--color-h), 55%, 56%);
+  --color-minus-1: hsl(var(--color-h), 85%, 25%);
+  --color-minus-2: hsl(var(--color-h), 90%, 15%);
+  --color-minus-3: hsl(var(--color-h), 95%, 10%);
+
+  --color-pending-h: 33;
+  --color-pending-90: hsl(var(--color-pending-h), 47%, 93%);
+  --color-pending-80: hsl(var(--color-pending-h), 97%, 87%);
+  --color-pending-70: hsl(var(--color-pending-h), 65%, 80%);
+  --color-pending-30: hsl(var(--color-pending-h), 88%, 32%);
+
+  --color-in-progress-h: 207;
+  --color-in-progress-90: hsl(var(--color-in-progress-h), 47%, 93%);
+  --color-in-progress-80: hsl(var(--color-in-progress-h), 60%, 82%);
+  --color-in-progress-70: hsl(var(--color-in-progress-h), 47%, 73%);
+  --color-in-progress-30: hsl(var(--color-in-progress-h), 88%, 32%);
+
+  --color-finished-h: 146;
+  --color-finished-90: hsl(var(--color-finished-h), 25%, 93%);
+  --color-finished-80: hsl(var(--color-finished-h), 45%, 75%);
+  --color-finished-70: hsl(var(--color-finished-h), 50%, 65%);
+  --color-finished-30: hsl(var(--color-finished-h), 85%, 25%);
+
+  --color-expired-h: 348;
+  --color-expired-90: hsl(var(--color-expired-h), 25%, 93%);
+  --color-expired-80: hsl(var(--color-expired-h), 45%, 85%);
+  --color-expired-70: hsl(var(--color-expired-h), 45%, 75%);
+  --color-expired-30: hsl(var(--color-expired-h), 80%, 35%);
+}

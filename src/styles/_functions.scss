@@ -1,0 +1,12 @@
+@import "../styles/variables/typography";
+
+// ? CONVERT PX TO REM -- MUST be GLOBAL, used on most screens and elements
+@function rem($value) /* value input in px */ {
+  $remValue: ($value / $max_font) * 1rem;
+  @return $remValue; /* value output in rem */
+}
+
+// STRIP VALUE UNIT
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

@@ -1,0 +1,14 @@
+<div class="content">
+    <span *ngIf="data.icon"
+          [ngClass]="data.messageType"
+          class="icon material-icons-outlined">{{data.icon}}</span>
+    <div class="message"
+         *ngIf="data.message">
+        <span>{{data.message}}</span>
+    </div>
+    <button class="action"
+            *ngIf="data.action"
+            (click)="dismiss(); data.onActionClick ? data.onActionClick() : undefined">
+        <span [ngClass]="data.messageType">{{data.action}}</span>
+    </button>
+</div>

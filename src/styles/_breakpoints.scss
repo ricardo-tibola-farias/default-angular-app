@@ -1,0 +1,95 @@
+@import './variables/breakpoints';
+
+// ! AVAILABLE MEDIAS QUERIES USING MIXINS
+
+//* min width
+// @include breakpoint-min(xxs){}
+// @include breakpoint-min(xs){}
+// @include breakpoint-min(sm){}
+// @include breakpoint-min(md){}    // commonly used to set :hover
+// @include breakpoint-min(lg){}
+// @include breakpoint-min(xl){}
+
+//* max width
+// @include breakpoint-max(xl){}    // commonly used - desktop // our main resolution
+// @include breakpoint-max(lg){}
+// @include breakpoint-max(md){}    // commonly used - tablet
+// @include breakpoint-max(sm){}
+// @include breakpoint-max(xs){}    // commonly used - mobile
+// @include breakpoint-max(xxs){}
+
+/* media queries mixins*/
+
+@import './functions';
+
+@mixin breakpoint-max($point) {
+  @if $point == xxxl {
+    @media (max-width: $breakpoints-xl) {
+      @content;
+    }
+  } @else if $point == xxl {
+    @media (max-width: $breakpoints-xxl) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media (max-width: $breakpoints-xl) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (max-width: $breakpoints-lg) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (max-width: $breakpoints-md) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (max-width: $breakpoints-sm) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media (max-width: $breakpoints-xs) {
+      @content;
+    }
+  } @else if $point == xxs {
+    @media (max-width: $breakpoints-xxs) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-min($point) {
+  @if $point == xxxl {
+    @media (min-width: #{$breakpoints-xxxl + 1}) {
+      @content;
+    }
+  } @else if $point == xxl {
+    @media (min-width: #{$breakpoints-xxl + 1}) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media (min-width: #{$breakpoints-xl + 1}) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (min-width: #{$breakpoints-lg + 1}) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (min-width: #{$breakpoints-md + 1}) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (min-width: #{$breakpoints-sm + 1}) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media (min-width: #{$breakpoints-xs + 1}) {
+      @content;
+    }
+  } @else if $point == xxs {
+    @media (min-width: #{$breakpoints-xxs + 1}) {
+      @content;
+    }
+  }
+}
