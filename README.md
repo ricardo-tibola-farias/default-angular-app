@@ -1,4 +1,14 @@
-# GrexWebApp
+# Default Web Angular App
+
+This is a base project architecture to start and use in large projects with Angular.
+
+This includes some features and patterns like:
+     - CSS variables
+     - Basic CSS styles like fonts, colors, breakpoints for responsiveness and others
+     - Common components such as custom alerts and toast messages
+     - Global helpers
+     - Basic services for authentication and messaging services
+     - Routing configuration
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
